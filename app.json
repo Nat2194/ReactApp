@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Ayone",
-    "slug": "Ayone",
+    "slug": "ayone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +28,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e8cec8d9-b0f0-4b5a-a4a0-a73716f7f3b3"
+      }
+    },
+    "owner": "nat2194"
   }
 }
