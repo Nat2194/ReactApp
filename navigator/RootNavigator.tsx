@@ -6,20 +6,17 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // Custom imports
 import TabNavigator from "./TabNavigator";
+import DrillNavigator from "./DrillNavigator";
+import { RootStackParamList } from "./types";
 
 const RootStack = createNativeStackNavigator();
-
-export type RootStackParamList = {
-  Main: undefined;
-  MyModal: { userId: string; name: string };
-  Stats: { stats: any }; //TODO: compléter
-};
 
 const RootNavigator = () => {
   return (
     <RootStack.Navigator>
       <RootStack.Group>
         <RootStack.Screen name="Main" component={TabNavigator} />
+        <RootStack.Screen name="Drill" component={DrillNavigator} />
       </RootStack.Group>
     </RootStack.Navigator>
   );

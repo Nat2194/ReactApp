@@ -9,6 +9,27 @@ export default StyleSheet.create({
   fillH: {
     minHeight: "100%",
   },
+
+  h10: {
+    height: 10,
+  },
+
+  h20: {
+    height: 20,
+  },
+
+  h30: {
+    height: 30,
+  },
+
+  h40: {
+    height: 40,
+  },
+
+  h50: {
+    height: 50,
+  },
+
   h100: {
     height: 100,
   },
@@ -32,6 +53,10 @@ export default StyleSheet.create({
 
   bgApp: {
     backgroundColor: "#e2e8f0",
+  },
+
+  bgBlack: {
+    backgroundColor: "black",
   },
 
   bgOrange: {
@@ -59,6 +84,10 @@ export default StyleSheet.create({
 
   // Marging
 
+  m30: {
+    margin: 30,
+  },
+
   mVert30: {
     marginVertical: 30,
   },
@@ -68,6 +97,10 @@ export default StyleSheet.create({
 
   mTop50: {
     marginTop: 50,
+  },
+
+  mLeft10: {
+    marginLeft: 10,
   },
 
   // Padding
@@ -99,10 +132,35 @@ export default StyleSheet.create({
     paddingTop: 30,
   },
 
+  pTop40: {
+    paddingTop: 40,
+  },
+
   pTop50: {
     paddingTop: 50,
   },
 
+  // Position
+
+  bottom: {
+    position: "relative",
+    bottom: 0,
+  },
+
+  top: {
+    position: "relative",
+    top: 0,
+  },
+
+  left: {
+    position: "relative",
+    left: 0,
+  },
+
+  right: {
+    position: "relative",
+    right: 0,
+  },
   // Flex
 
   row: {
@@ -126,6 +184,14 @@ export default StyleSheet.create({
   startCol: {
     flexDirection: "column",
     justifyContent: "flex-start",
+  },
+  endRow: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+  },
+  endCol: {
+    flexDirection: "column",
+    justifyContent: "flex-end",
   },
   flex1: {
     flex: 1,
@@ -151,11 +217,20 @@ export default StyleSheet.create({
   align: {
     alignItems: "center",
   },
+  alignStart: {
+    alignItems: "flex-start",
+  },
+  alignEnd: {
+    alignSelf: "flex-end",
+  },
   spaceBetween: {
     justifyContent: "space-between",
   },
   spaceEvenly: {
     justifyContent: "space-evenly",
+  },
+  spaceStart: {
+    justifyContent: "flex-start",
   },
 
   // Shadows
@@ -193,16 +268,120 @@ export default StyleSheet.create({
     textAlign: "center",
   },
 
+  // Borders
+
+  border1: {
+    borderWidth: 1,
+  },
+  border3: {
+    borderWidth: 3,
+  },
+  border5: {
+    borderWidth: 5,
+  },
+
+  borderVert1: {
+    borderBottomWidth: 1,
+    borderTopWidth: 1,
+  },
+
+  borderVert3: {
+    borderBottomWidth: 3,
+    borderTopWidth: 3,
+  },
+
+  borderVert5: {
+    borderBottomWidth: 5,
+    borderTopWidth: 5,
+  },
+
+  borderHori1: {
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+  },
+
+  borderHori3: {
+    borderLeftWidth: 3,
+    borderRightWidth: 3,
+  },
+
+  borderHori5: {
+    borderLeftWidth: 5,
+    borderRightWidth: 5,
+  },
+
+  borderTop1: {
+    borderTopWidth: 1,
+  },
+
+  borderTop2: {
+    borderTopWidth: 2,
+  },
+
+  borderTop3: {
+    borderTopWidth: 3,
+  },
+
+  borderTop5: {
+    borderTopWidth: 5,
+  },
+
+  borderTop10: {
+    borderTopWidth: 10,
+  },
+
+  borderBottom1: {
+    borderBottomWidth: 1,
+  },
+
+  borderBottom2: {
+    borderBottomWidth: 2,
+  },
+
+  borderBottom3: {
+    borderBottomWidth: 3,
+  },
+
+  borderBottom5: {
+    borderBottomWidth: 5,
+  },
+
+  borderBottom10: {
+    borderBottomWidth: 10,
+  },
+
+  borderApp: {
+    borderColor: "#e2e8f0",
+  },
+
+  borderWhite: {
+    borderColor: "white",
+  },
+
+  borderBlack: {
+    borderColor: "black",
+  },
+
+  borderGrey: {
+    borderColor: "#94a3b8",
+  },
+
+  borderDarkGrey: {
+    borderColor: "#1f2937",
+  },
+
+  borderOrange: {
+    borderColor: "#f26636",
+  },
+
+  borderDarkOrange: {
+    borderColor: "#db5c30",
+  },
+
   // Particular Cases
   image: {
     resizeMode: "cover",
     width: "100%",
     height: "100%",
-  },
-  message: {
-    color: "white",
-    fontWeight: "bold",
-    textShadowColor: "#333",
-    fontSize: 24,
   },
 });

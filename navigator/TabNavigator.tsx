@@ -3,14 +3,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "@rneui/themed";
 
 // Custom imports
-import UserScreen from "../screens/UserScreen";
-import PracticeScreen from "../screens/PracticeScreen";
+import UserNavigator from "./UserNavigator";
 import { useNavigation } from "@react-navigation/native";
-
-export type TabStackParamList = {
-  User: undefined;
-  Practice: undefined;
-};
+import { TabStackParamList } from "./types";
+import DrillNavigator from "./DrillNavigator";
 
 const Tab = createBottomTabNavigator<TabStackParamList>();
 
@@ -28,7 +24,7 @@ const TabNavigator = () => {
         tapBarActiveTintColor: "#59C1CC",
         tapBarInactiveTintColor: "gray",
         tabBarIcon: ({ focused, color, size }) => {
-          if (route.name === "User") {
+          if (route.name === "Profile") {
             return (
               <Icon
                 name="user"
@@ -48,8 +44,8 @@ const TabNavigator = () => {
         },
       })}
     >
-      <Tab.Screen name="User" component={UserScreen} />
-      <Tab.Screen name="Practice" component={PracticeScreen} />
+      <Tab.Screen name="Profile" component={UserNavigator} />
+      <Tab.Screen name="Practice" component={DrillNavigator} />
     </Tab.Navigator>
   );
 };

@@ -1,26 +1,27 @@
 import React, { useLayoutEffect } from "react";
 import {
-  ScrollView,
+  ImageBackground,
   Text,
   View,
   ActivityIndicator,
   Dimensions,
+  TouchableOpacity,
 } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { Image } from "@rneui/themed";
-
-// Custom imports
-import styles from "../styles";
 import {
   useNavigation,
   CompositeNavigationProp,
 } from "@react-navigation/native";
-import { TabStackParamList } from "../navigator/TabNavigator";
-import { RootStackParamList } from "../navigator/RootNavigator";
+import Constants from "expo-constants";
+
+// Custom imports
+import styles from "../styles";
+import { DrillStackParamList, TabStackParamList } from "../navigator/types";
+import { RootStackParamList } from "../navigator/types";
 
 export type PracticeScreenNavigationProps = CompositeNavigationProp<
-  BottomTabNavigationProp<TabStackParamList, "Practice">,
+  NativeStackNavigationProp<DrillStackParamList, "Overview">,
   NativeStackNavigationProp<RootStackParamList>
 >;
 
@@ -37,12 +38,12 @@ const PracticeScreen = () => {
   }, []);
 
   return (
-    <View style={[styles.bgApp]}>
+    <View style={[styles.bgApp, { paddingTop: Constants.statusBarHeight }]}>
       <Image
         source={require("../assets/practice.jpg")}
         containerStyle={[
           styles.startCol,
-          { height: windowHeight / 4 },
+          { height: windowHeight / 5 },
           styles.bgBlue,
         ]}
         style={[styles.image, styles.startCol]}
@@ -54,6 +55,7 @@ const PracticeScreen = () => {
           styles.pVert10,
           styles.fillW,
           styles.bgOrange,
+          { height: windowHeight / 10 },
         ]}
       >
         <Text
@@ -65,131 +67,116 @@ const PracticeScreen = () => {
       <View>
         <View
           style={[
-            styles.row,
+            styles.col,
             styles.fillW,
             styles.spaceEvenly,
-            styles.mVert30,
-            { height: (windowHeight * 6) / 10 },
+            { height: (windowHeight * 64) / 100 },
           ]}
         >
-          <View
-            style={[
-              styles.col,
-              styles.spaceEvenly,
-              styles.align,
-              styles.mVert30,
-            ]}
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Shooting")}
+            style={[styles.fillW, { height: "25%" }]}
           >
-            <View
-              style={[
-                styles.align,
-                styles.centerRow,
-                styles.bgOrange,
-                styles.h120,
-                styles.ratio1,
-                styles.round30,
-              ]}
-            >
-              <Text
-                adjustsFontSizeToFit
-                numberOfLines={1}
-                style={[
-                  styles.size20,
-                  styles.bold,
-                  styles.txtWhite,
-                  styles.shadow,
-                  styles.p5,
-                  styles.alignCenter,
-                ]}
+            <View style={[styles.col, styles.fillW, styles.centerCol]}>
+              <ImageBackground
+                source={require("../assets/shooting.jpg")}
+                resizeMode="cover"
+                style={[styles.image, styles.centerCol]}
               >
-                Shooting
-              </Text>
+                <Text
+                  numberOfLines={1}
+                  style={[
+                    styles.size20,
+                    styles.bold,
+                    styles.txtWhite,
+                    styles.shadow,
+                    styles.p5,
+                    styles.alignCenter,
+                  ]}
+                >
+                  Shooting
+                </Text>
+              </ImageBackground>
             </View>
-            <View
-              style={[
-                styles.align,
-                styles.centerRow,
-                styles.bgOrange,
-                styles.h120,
-                styles.ratio1,
-                styles.round30,
-              ]}
-            >
-              <Text
-                adjustsFontSizeToFit
-                numberOfLines={1}
-                style={[
-                  styles.size20,
-                  styles.bold,
-                  styles.txtWhite,
-                  styles.shadow,
-                  styles.p5,
-                  styles.alignCenter,
-                ]}
-              >
-                Finishing
-              </Text>
-            </View>
-          </View>
-          <View
-            style={[
-              styles.col,
-              styles.spaceEvenly,
-              styles.align,
-              styles.mVert30,
-            ]}
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Finishing")}
+            style={[styles.fillW, { height: "25%" }]}
           >
-            <View
-              style={[
-                styles.align,
-                styles.centerRow,
-                styles.bgOrange,
-                styles.h120,
-                styles.ratio1,
-                styles.round30,
-              ]}
-            >
-              <Text
-                adjustsFontSizeToFit
-                numberOfLines={2}
-                style={[
-                  styles.size20,
-                  styles.bold,
-                  styles.txtWhite,
-                  styles.shadow,
-                  styles.p5,
-                  styles.alignCenter,
-                ]}
+            <View style={[styles.col, styles.fillW, styles.centerCol]}>
+              <ImageBackground
+                source={require("../assets/finishing.jpg")}
+                resizeMode="cover"
+                style={[styles.image, styles.centerCol]}
               >
-                Ball{"\n"}Handling
-              </Text>
+                <Text
+                  numberOfLines={1}
+                  style={[
+                    styles.size20,
+                    styles.bold,
+                    styles.txtWhite,
+                    styles.shadow,
+                    styles.p5,
+                    styles.alignCenter,
+                  ]}
+                >
+                  Finishing
+                </Text>
+              </ImageBackground>
             </View>
-            <View
-              style={[
-                styles.align,
-                styles.centerRow,
-                styles.bgOrange,
-                styles.h120,
-                styles.ratio1,
-                styles.round30,
-              ]}
-            >
-              <Text
-                adjustsFontSizeToFit
-                numberOfLines={1}
-                style={[
-                  styles.size20,
-                  styles.bold,
-                  styles.txtWhite,
-                  styles.shadow,
-                  styles.p5,
-                  styles.alignCenter,
-                ]}
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Handling")}
+            style={[styles.fillW, { height: "25%" }]}
+          >
+            <View style={[styles.col, styles.fillW, styles.centerCol]}>
+              <ImageBackground
+                source={require("../assets/handling.jpg")}
+                resizeMode="cover"
+                style={[styles.image, styles.centerCol]}
               >
-                Athleticism
-              </Text>
+                <Text
+                  numberOfLines={2}
+                  style={[
+                    styles.size20,
+                    styles.bold,
+                    styles.txtWhite,
+                    styles.shadow,
+                    styles.p5,
+                    styles.alignCenter,
+                  ]}
+                >
+                  Ball Handling
+                </Text>
+              </ImageBackground>
             </View>
-          </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Athleticism")}
+            style={[styles.fillW, { height: "25%" }]}
+          >
+            <View style={[styles.col, styles.fillW, styles.centerCol]}>
+              <ImageBackground
+                source={require("../assets/athleticism.jpg")}
+                resizeMode="cover"
+                style={[styles.image, styles.centerCol]}
+              >
+                <Text
+                  numberOfLines={1}
+                  style={[
+                    styles.size20,
+                    styles.bold,
+                    styles.txtWhite,
+                    styles.shadow,
+                    styles.p5,
+                    styles.alignCenter,
+                  ]}
+                >
+                  Athleticism
+                </Text>
+              </ImageBackground>
+            </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
