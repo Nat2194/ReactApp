@@ -1,12 +1,5 @@
 import React, { useLayoutEffect } from "react";
-import {
-  ImageBackground,
-  Text,
-  View,
-  ActivityIndicator,
-  Dimensions,
-  TouchableOpacity,
-} from "react-native";
+import { Text, View, ActivityIndicator, Dimensions } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Image } from "@rneui/themed";
 import {
@@ -17,8 +10,9 @@ import Constants from "expo-constants";
 
 // Custom imports
 import styles from "../styles";
-import { DrillStackParamList, TabStackParamList } from "../navigator/types";
+import { DrillStackParamList } from "../navigator/types";
 import { RootStackParamList } from "../navigator/types";
+import ImageDrill from "../components/ImageDrill";
 
 export type PracticeScreenNavigationProps = CompositeNavigationProp<
   NativeStackNavigationProp<DrillStackParamList, "Overview">,
@@ -73,110 +67,38 @@ const PracticeScreen = () => {
             { height: (windowHeight * 64) / 100 },
           ]}
         >
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Shooting")}
-            style={[styles.fillW, { height: "25%" }]}
-          >
-            <View style={[styles.col, styles.fillW, styles.centerCol]}>
-              <ImageBackground
-                source={require("../assets/shooting.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  numberOfLines={1}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Shooting
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Finishing")}
-            style={[styles.fillW, { height: "25%" }]}
-          >
-            <View style={[styles.col, styles.fillW, styles.centerCol]}>
-              <ImageBackground
-                source={require("../assets/finishing.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  numberOfLines={1}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Finishing
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Handling")}
-            style={[styles.fillW, { height: "25%" }]}
-          >
-            <View style={[styles.col, styles.fillW, styles.centerCol]}>
-              <ImageBackground
-                source={require("../assets/handling.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  numberOfLines={2}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Ball Handling
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Athleticism")}
-            style={[styles.fillW, { height: "25%" }]}
-          >
-            <View style={[styles.col, styles.fillW, styles.centerCol]}>
-              <ImageBackground
-                source={require("../assets/athleticism.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  numberOfLines={1}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Athleticism
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
+          <ImageDrill
+            nav={navigation}
+            route="Shooting"
+            name="Shooting"
+            numberLines={2}
+            image={require("../assets/shooting.jpg")}
+            height={"25%"}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="Finishing"
+            name="Finishing"
+            numberLines={2}
+            image={require("../assets/finishing.jpg")}
+            height={"25%"}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="Handling"
+            name="Ball Handling"
+            numberLines={3}
+            image={require("../assets/handling.jpg")}
+            height={"25%"}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="Athleticism"
+            name="Athleticism"
+            numberLines={2}
+            image={require("../assets/athleticism.jpg")}
+            height={"25%"}
+          />
         </View>
       </View>
     </View>

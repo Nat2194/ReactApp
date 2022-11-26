@@ -5,7 +5,6 @@ import {
   View,
   Dimensions,
   TouchableOpacity,
-  ScrollView,
 } from "react-native";
 import { Icon } from "@rneui/themed";
 import Constants from "expo-constants";
@@ -15,13 +14,13 @@ import styles from "../styles";
 
 type props = {
   navigation: any;
-  drill: any;
+  drills: any;
   image: any;
-  name: String;
-  previous: String;
+  name: any;
 };
 
-const DrillPanel = ({ navigation, drill, image, name, previous }: props) => {
+const DrillPanel = ({ navigation, drills, image, name }: props) => {
+  const windowWidth = Dimensions.get("window").width;
   const windowHeight = Dimensions.get("window").height;
 
   useLayoutEffect(() => {
@@ -43,7 +42,7 @@ const DrillPanel = ({ navigation, drill, image, name, previous }: props) => {
           <View style={[styles.centerCol, styles.fillH]}>
             <View style={{ position: "absolute", top: 10, left: 0 }}>
               <TouchableOpacity
-                onPress={() => navigation.navigate(previous)}
+                onPress={() => navigation.navigate("Overview")}
                 style={[
                   styles.h40,
                   styles.ratio1,
@@ -74,7 +73,7 @@ const DrillPanel = ({ navigation, drill, image, name, previous }: props) => {
         </ImageBackground>
       </View>
       <View style={[styles.startCol, { height: (windowHeight * 68) / 100 }]}>
-        <ScrollView style={[styles.col]}>{drill}</ScrollView>
+        {drills}
       </View>
     </View>
   );

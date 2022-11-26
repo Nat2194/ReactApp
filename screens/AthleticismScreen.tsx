@@ -1,16 +1,7 @@
 import React, { useLayoutEffect } from "react";
-import {
-  ImageBackground,
-  Text,
-  View,
-  Dimensions,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { Dimensions, ScrollView } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import { Icon } from "@rneui/themed";
-import Constants from "expo-constants";
 
 // Custom imports
 import styles from "../styles";
@@ -20,6 +11,8 @@ import {
 } from "@react-navigation/native";
 import { TabStackParamList } from "../navigator/types";
 import { DrillStackParamList } from "../navigator/types";
+import DrillPanel from "../components/DrillPanel";
+import ImageDrill from "../components/ImageDrill";
 
 export type AthleticismScreenNavigationProps = CompositeNavigationProp<
   NativeStackNavigationProp<DrillStackParamList>,
@@ -29,9 +22,6 @@ export type AthleticismScreenNavigationProps = CompositeNavigationProp<
 function AthleticismScreen() {
   const navigation = useNavigation<AthleticismScreenNavigationProps>();
 
-  const windowWidth = Dimensions.get("window").width;
-  const windowHeight = Dimensions.get("window").height;
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -39,161 +29,47 @@ function AthleticismScreen() {
   }, []);
 
   return (
-    <View style={[styles.startCol, { paddingTop: Constants.statusBarHeight }]}>
-      <View
-        style={[styles.startCol, styles.borderDarkOrange, styles.borderBottom2]}
-      >
-        <ImageBackground
-          source={require("../assets/athleticism.jpg")}
-          resizeMode="cover"
-          style={[styles.image, { height: (25 * windowHeight) / 100 }]}
-        >
-          <View style={[styles.centerCol, styles.fillH]}>
-            <View style={{ position: "absolute", top: 10, left: 0 }}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("Overview")}
-                style={[
-                  styles.h40,
-                  styles.ratio1,
-                  styles.centerRow,
-                  styles.bgOrange,
-                  styles.round30,
-                  styles.mLeft10,
-                  styles.align,
-                ]}
-              >
-                <Icon name="chevron-left" type="entypo" color={"white"}></Icon>
-              </TouchableOpacity>
-            </View>
-            <View style={[styles.align, styles.centerCol]}>
-              <Text
-                numberOfLines={1}
-                style={[
-                  styles.size32,
-                  styles.bold,
-                  styles.txtWhite,
-                  styles.shadow,
-                ]}
-              >
-                Athleticism Workouts
-              </Text>
-            </View>
-          </View>
-        </ImageBackground>
-      </View>
-      <View style={[styles.startCol, { height: (windowHeight * 68) / 100 }]}>
+    <DrillPanel
+      navigation={navigation}
+      image={require("../assets/athleticism.jpg")}
+      name="Athleticism Workouts"
+      drills={
         <ScrollView style={[styles.col]}>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Athleticism")}
-            style={[styles.startCol, { height: 150 }]}
-          >
-            <View style={[styles.alignStart, styles.startCol]}>
-              <ImageBackground
-                source={require("../assets/plyometrics.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  adjustsFontSizeToFit
-                  numberOfLines={2}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Plyometrics
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Athleticism")}
-            style={[styles.startCol, { height: 150 }]}
-          >
-            <View style={[styles.alignStart, styles.startCol]}>
-              <ImageBackground
-                source={require("../assets/core.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  adjustsFontSizeToFit
-                  numberOfLines={3}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Core Training
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Finishing")}
-            style={[styles.startCol, { height: 150 }]}
-          >
-            <View style={[styles.alignStart, styles.startCol]}>
-              <ImageBackground
-                source={require("../assets/reverse-layup.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  adjustsFontSizeToFit
-                  numberOfLines={3}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Layup Drills
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Finishing")}
-            style={[styles.startCol, { height: 150 }]}
-          >
-            <View style={[styles.alignStart, styles.startCol]}>
-              <ImageBackground
-                source={require("../assets/post-moves.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  adjustsFontSizeToFit
-                  numberOfLines={3}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Post Moves
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
+          <ImageDrill
+            nav={navigation}
+            route="Shooting"
+            name="Plyometrics"
+            numberLines={2}
+            image={require("../assets/plyometrics.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="Shooting"
+            name="Core Training"
+            numberLines={3}
+            image={require("../assets/core.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="Shooting"
+            name="Leg Training"
+            numberLines={3}
+            image={require("../assets/legs.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="Shooting"
+            name="Cardio Training"
+            numberLines={3}
+            image={require("../assets/cardio.jpg")}
+            height={150}
+          />
         </ScrollView>
-      </View>
-    </View>
+      }
+    />
   );
 }
 

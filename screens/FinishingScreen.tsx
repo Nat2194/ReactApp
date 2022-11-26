@@ -20,6 +20,8 @@ import {
 } from "@react-navigation/native";
 import { TabStackParamList } from "../navigator/types";
 import { DrillStackParamList } from "../navigator/types";
+import DrillPanel from "../components/DrillPanel";
+import ImageDrill from "../components/ImageDrill";
 
 export type FinishingScreenNavigationProps = CompositeNavigationProp<
   NativeStackNavigationProp<DrillStackParamList>,
@@ -39,161 +41,47 @@ function FinishingScreen() {
   }, []);
 
   return (
-    <View style={[styles.startCol, { paddingTop: Constants.statusBarHeight }]}>
-      <View
-        style={[styles.startCol, styles.borderDarkOrange, styles.borderBottom2]}
-      >
-        <ImageBackground
-          source={require("../assets/finishing.jpg")}
-          resizeMode="cover"
-          style={[styles.image, { height: (25 * windowHeight) / 100 }]}
-        >
-          <View style={[styles.centerCol, styles.fillH]}>
-            <View style={{ position: "absolute", top: 10, left: 0 }}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("Overview")}
-                style={[
-                  styles.h40,
-                  styles.ratio1,
-                  styles.centerRow,
-                  styles.bgOrange,
-                  styles.round30,
-                  styles.mLeft10,
-                  styles.align,
-                ]}
-              >
-                <Icon name="chevron-left" type="entypo" color={"white"}></Icon>
-              </TouchableOpacity>
-            </View>
-            <View style={[styles.align, styles.centerCol]}>
-              <Text
-                numberOfLines={1}
-                style={[
-                  styles.size32,
-                  styles.bold,
-                  styles.txtWhite,
-                  styles.shadow,
-                ]}
-              >
-                Finishing Drills
-              </Text>
-            </View>
-          </View>
-        </ImageBackground>
-      </View>
-      <View style={[styles.startCol, { height: (windowHeight * 68) / 100 }]}>
+    <DrillPanel
+      navigation={navigation}
+      image={require("../assets/finishing.jpg")}
+      name="Finishing Drills"
+      drills={
         <ScrollView style={[styles.col]}>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Shooting")}
-            style={[styles.startCol, { height: 150 }]}
-          >
-            <View style={[styles.alignStart, styles.startCol]}>
-              <ImageBackground
-                source={require("../assets/mikan.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  adjustsFontSizeToFit
-                  numberOfLines={2}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Mikan Drill
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Finishing")}
-            style={[styles.startCol, { height: 150 }]}
-          >
-            <View style={[styles.alignStart, styles.startCol]}>
-              <ImageBackground
-                source={require("../assets/trae.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  adjustsFontSizeToFit
-                  numberOfLines={2}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Floaters
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Finishing")}
-            style={[styles.startCol, { height: 150 }]}
-          >
-            <View style={[styles.alignStart, styles.startCol]}>
-              <ImageBackground
-                source={require("../assets/reverse-layup.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  adjustsFontSizeToFit
-                  numberOfLines={3}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Layup Drills
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => navigation.navigate("Finishing")}
-            style={[styles.startCol, { height: 150 }]}
-          >
-            <View style={[styles.alignStart, styles.startCol]}>
-              <ImageBackground
-                source={require("../assets/post-moves.jpg")}
-                resizeMode="cover"
-                style={[styles.image, styles.centerCol]}
-              >
-                <Text
-                  adjustsFontSizeToFit
-                  numberOfLines={3}
-                  style={[
-                    styles.size20,
-                    styles.bold,
-                    styles.txtWhite,
-                    styles.shadow,
-                    styles.p5,
-                    styles.alignCenter,
-                  ]}
-                >
-                  Post Moves
-                </Text>
-              </ImageBackground>
-            </View>
-          </TouchableOpacity>
+          <ImageDrill
+            nav={navigation}
+            route="Shooting"
+            name="Mikan Drill"
+            numberLines={3}
+            image={require("../assets/mikan.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="Handling"
+            name="Layup Drills"
+            numberLines={3}
+            image={require("../assets/reverse-layup.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="Handling"
+            name="Floaters"
+            numberLines={2}
+            image={require("../assets/trae.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="Handling"
+            name="Post Moves"
+            numberLines={3}
+            image={require("../assets/post-moves.jpg")}
+            height={150}
+          />
         </ScrollView>
-      </View>
-    </View>
+      }
+    />
   );
 }
 
