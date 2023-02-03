@@ -14,13 +14,13 @@ import { DrillStackParamList } from "../navigator/types";
 import DrillPanel from "../components/DrillPanel";
 import ImageDrill from "../components/ImageDrill";
 
-export type AthleticismScreenNavigationProps = CompositeNavigationProp<
+export type CrossoversScreenNavigationProps = CompositeNavigationProp<
   NativeStackNavigationProp<DrillStackParamList>,
   BottomTabNavigationProp<TabStackParamList, "Practice">
 >;
 
-function AthleticismScreen() {
-  const navigation = useNavigation<AthleticismScreenNavigationProps>();
+function CrossoversScreen() {
+  const navigation = useNavigation<CrossoversScreenNavigationProps>();
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -31,40 +31,40 @@ function AthleticismScreen() {
   return (
     <DrillPanel
       navigation={navigation}
-      image={require("../assets/athleticism.jpg")}
-      name="Athleticism Workouts"
+      image={require("../assets/crossover.jpg")}
+      name="Crossover Drills"
       drills={
         <ScrollView style={[styles.col]}>
           <ImageDrill
             nav={navigation}
-            route="Plyometrics"
-            name="Plyometrics"
+            route="BasicCrossover"
+            name="Crossover"
+            numberLines={3}
+            image={require("../assets/basic-cross.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="KillerCrossover"
+            name="Killer Crossover"
+            numberLines={3}
+            image={require("../assets/killer-cross.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="DoubleCrossover"
+            name="Double Crossover"
+            numberLines={3}
+            image={require("../assets/double-cross.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="Snatch"
+            name="Snatch"
             numberLines={2}
-            image={require("../assets/plyometrics.jpg")}
-            height={150}
-          />
-          <ImageDrill
-            nav={navigation}
-            route="Core"
-            name="Core Training"
-            numberLines={3}
-            image={require("../assets/core.jpg")}
-            height={150}
-          />
-          <ImageDrill
-            nav={navigation}
-            route="Leg"
-            name="Leg Training"
-            numberLines={3}
-            image={require("../assets/legs.jpg")}
-            height={150}
-          />
-          <ImageDrill
-            nav={navigation}
-            route="Cardio"
-            name="Cardio Training"
-            numberLines={3}
-            image={require("../assets/cardio.jpg")}
+            image={require("../assets/snatch.jpg")}
             height={150}
           />
         </ScrollView>
@@ -73,4 +73,4 @@ function AthleticismScreen() {
   );
 }
 
-export default AthleticismScreen;
+export default CrossoversScreen;

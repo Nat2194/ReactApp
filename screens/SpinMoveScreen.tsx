@@ -14,13 +14,13 @@ import { DrillStackParamList } from "../navigator/types";
 import DrillPanel from "../components/DrillPanel";
 import ImageDrill from "../components/ImageDrill";
 
-export type AthleticismScreenNavigationProps = CompositeNavigationProp<
+export type SpinMoveScreenNavigationProps = CompositeNavigationProp<
   NativeStackNavigationProp<DrillStackParamList>,
   BottomTabNavigationProp<TabStackParamList, "Practice">
 >;
 
-function AthleticismScreen() {
-  const navigation = useNavigation<AthleticismScreenNavigationProps>();
+function SpinMoveScreen() {
+  const navigation = useNavigation<SpinMoveScreenNavigationProps>();
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -31,40 +31,40 @@ function AthleticismScreen() {
   return (
     <DrillPanel
       navigation={navigation}
-      image={require("../assets/athleticism.jpg")}
-      name="Athleticism Workouts"
+      image={require("../assets/spin-move.jpg")}
+      name="Spin Moves"
       drills={
         <ScrollView style={[styles.col]}>
           <ImageDrill
             nav={navigation}
-            route="Plyometrics"
-            name="Plyometrics"
+            route="ReverseSpin"
+            name="Reverse"
             numberLines={2}
-            image={require("../assets/plyometrics.jpg")}
+            image={require("../assets/reverse-spin.jpg")}
             height={150}
           />
           <ImageDrill
             nav={navigation}
-            route="Core"
-            name="Core Training"
+            route="FakeReverse"
+            name="Fake Reverse"
             numberLines={3}
-            image={require("../assets/core.jpg")}
+            image={require("../assets/fake-reverse.jpg")}
             height={150}
           />
           <ImageDrill
             nav={navigation}
-            route="Leg"
-            name="Leg Training"
-            numberLines={3}
-            image={require("../assets/legs.jpg")}
+            route="PennyHardaway"
+            name="Peny Hardaway Move"
+            numberLines={4}
+            image={require("../assets/penny-hardaway.jpg")}
             height={150}
           />
           <ImageDrill
             nav={navigation}
-            route="Cardio"
-            name="Cardio Training"
+            route="KyrieHesi"
+            name="Kyrie Hesi"
             numberLines={3}
-            image={require("../assets/cardio.jpg")}
+            image={require("../assets/kyrie-hesi-spin.jpg")}
             height={150}
           />
         </ScrollView>
@@ -73,4 +73,4 @@ function AthleticismScreen() {
   );
 }
 
-export default AthleticismScreen;
+export default SpinMoveScreen;

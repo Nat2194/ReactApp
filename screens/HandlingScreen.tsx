@@ -38,7 +38,7 @@ function HandlingScreen() {
         <ScrollView style={[styles.col]}>
           <ImageDrill
             nav={navigation}
-            route="Athleticism"
+            route="BallControl"
             name="Ball Control Drills"
             numberLines={4}
             image={require("../assets/ball-control.jpg")}
@@ -46,7 +46,7 @@ function HandlingScreen() {
           />
           <ImageDrill
             nav={navigation}
-            route="Athleticism"
+            route="Crossover"
             name="Crossovers"
             numberLines={2}
             image={require("../assets/crossover.jpg")}
@@ -54,7 +54,7 @@ function HandlingScreen() {
           />
           <ImageDrill
             nav={navigation}
-            route="Athleticism"
+            route="BTL"
             name="Between the Legs"
             numberLines={4}
             image={require("../assets/btl.jpg")}
@@ -62,7 +62,7 @@ function HandlingScreen() {
           />
           <ImageDrill
             nav={navigation}
-            route="Athleticism"
+            route="BTB"
             name="Behind the Back"
             numberLines={4}
             image={require("../assets/btb.jpg")}
@@ -70,7 +70,7 @@ function HandlingScreen() {
           />
           <ImageDrill
             nav={navigation}
-            route="Athleticism"
+            route="InNOut"
             name="In & Out"
             numberLines={4}
             image={require("../assets/in-n-out.jpg")}
@@ -78,10 +78,26 @@ function HandlingScreen() {
           />
           <ImageDrill
             nav={navigation}
-            route="Athleticism"
+            route="Hesitation"
+            name="Hesitation"
+            numberLines={2}
+            image={require("../assets/hesi.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="SpinMoves"
             name="Spin Moves"
             numberLines={3}
             image={require("../assets/spin-move.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="Shammgod"
+            name="Shammgod"
+            numberLines={3}
+            image={require("../assets/shammgod.jpg")}
             height={150}
           />
         </ScrollView>

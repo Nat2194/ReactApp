@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from "react";
-import { ScrollView } from "react-native";
+import { Dimensions, ScrollView } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 
@@ -11,16 +11,16 @@ import {
 } from "@react-navigation/native";
 import { TabStackParamList } from "../navigator/types";
 import { DrillStackParamList } from "../navigator/types";
-import ImageDrill from "../components/ImageDrill";
 import DrillPanel from "../components/DrillPanel";
+import ImageDrill from "../components/ImageDrill";
 
-export type ShootingScreenNavigationProps = CompositeNavigationProp<
+export type LayupsScreenNavigationProps = CompositeNavigationProp<
   NativeStackNavigationProp<DrillStackParamList>,
   BottomTabNavigationProp<TabStackParamList, "Practice">
 >;
 
-function ShootingScreen() {
-  const navigation = useNavigation<ShootingScreenNavigationProps>();
+function LayupsScreen() {
+  const navigation = useNavigation<LayupsScreenNavigationProps>();
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -31,64 +31,56 @@ function ShootingScreen() {
   return (
     <DrillPanel
       navigation={navigation}
-      image={require("../assets/shooting.jpg")}
-      name="Shooting Drills"
+      image={require("../assets/layup.jpg")}
+      name="Layup Drills"
       drills={
         <ScrollView style={[styles.col]}>
           <ImageDrill
             nav={navigation}
-            route="FormShot"
-            name="Form Shots"
+            route="UnderhandLayup"
+            name="Underhand Layup"
             numberLines={3}
-            image={require("../assets/form.png")}
+            image={require("../assets/underhand-layup.jpg")}
             height={150}
           />
           <ImageDrill
             nav={navigation}
-            route="FreeThrow"
-            name="Free Throws"
+            route="Eurostep"
+            name="Eurostep"
+            numberLines={2}
+            image={require("../assets/eurostep.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="ReverseLayup"
+            name="Reverse Layup"
             numberLines={3}
-            image={require("../assets/free-throw.jpg")}
+            image={require("../assets/reverse-layup.jpg")}
             height={150}
           />
           <ImageDrill
             nav={navigation}
-            route="Midrange"
-            name="Midrange"
-            numberLines={2}
-            image={require("../assets/midrange.jpg")}
-            height={150}
-          />
-          <ImageDrill
-            nav={navigation}
-            route="RayAllen"
-            name="Ray Allen Drill"
+            route="UpAndUnder"
+            name="Up And Under"
             numberLines={4}
-            image={require("../assets/ray-allen.jpg")}
+            image={require("../assets/up-and-under.jpg")}
             height={150}
           />
           <ImageDrill
             nav={navigation}
-            route="ThreePoint"
-            name="3 Point Shooting"
+            route="SpinLayup"
+            name="Spin Layup"
+            numberLines={3}
+            image={require("../assets/spin-layup.jpg")}
+            height={150}
+          />
+          <ImageDrill
+            nav={navigation}
+            route="ShakeAndBake"
+            name="Shake N Bake"
             numberLines={4}
-            image={require("../assets/curry.jpg")}
-            height={150}
-          />
-          <ImageDrill
-            nav={navigation}
-            route="Fadeaway"
-            name="Fadeaway"
-            numberLines={2}
-            image={require("../assets/fadeaway.jpg")}
-            height={150}
-          />
-          <ImageDrill
-            nav={navigation}
-            route="Stepback"
-            name="Stepback"
-            numberLines={2}
-            image={require("../assets/stepback.jpg")}
+            image={require("../assets/shake-n-bake.jpg")}
             height={150}
           />
         </ScrollView>
@@ -97,4 +89,4 @@ function ShootingScreen() {
   );
 }
 
-export default ShootingScreen;
+export default LayupsScreen;

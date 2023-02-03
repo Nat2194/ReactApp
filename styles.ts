@@ -71,11 +71,32 @@ export default StyleSheet.create({
   bgGreen: {
     backgroundColor: "green",
   },
+  bgLightGrey: {
+    backgroundColor: "#E5E4E2",
+  },
+  bgGrey: {
+    backgroundColor: "#A9A9A9",
+  },
+  bgDarkGrey: {
+    backgroundColor: "#71797E",
+  },
 
   // Layout
 
   ratio1: {
     aspectRatio: 1,
+  },
+
+  round15: {
+    borderRadius: 15,
+  },
+
+  round20: {
+    borderRadius: 20,
+  },
+
+  round25: {
+    borderRadius: 25,
   },
 
   round30: {
@@ -88,9 +109,18 @@ export default StyleSheet.create({
     margin: 30,
   },
 
+  mVert10: {
+    marginVertical: 10,
+  },
+
   mVert30: {
     marginVertical: 30,
   },
+
+  mHori30: {
+    marginHorizontal: 30,
+  },
+
   mTop30: {
     marginTop: 30,
   },
@@ -105,7 +135,19 @@ export default StyleSheet.create({
 
   // Padding
   p5: {
+    padding: 5,
+  },
+
+  p10: {
     padding: 10,
+  },
+
+  p15: {
+    padding: 15,
+  },
+
+  p20: {
+    padding: 20,
   },
 
   p30: {
@@ -138,6 +180,29 @@ export default StyleSheet.create({
 
   pTop50: {
     paddingTop: 50,
+  },
+
+  pBottom10: {
+    paddingBottom: 10,
+  },
+
+  pBottom30: {
+    paddingBottom: 30,
+  },
+
+  pBottom40: {
+    paddingBottom: 40,
+  },
+
+  pBottom50: {
+    paddingBottom: 50,
+  },
+
+  pLeft10: {
+    paddingLeft: 10,
+  },
+  pLeft20: {
+    paddingLeft: 20,
   },
 
   // Position
@@ -248,6 +313,10 @@ export default StyleSheet.create({
   bold: {
     fontWeight: "bold",
   },
+  size14: {
+    fontSize: 14,
+  },
+
   size18: {
     fontSize: 18,
   },
@@ -383,5 +452,27 @@ export default StyleSheet.create({
     resizeMode: "cover",
     width: "100%",
     height: "100%",
+  },
+
+  container: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "center",
+    alignSelf: "stretch",
+    backgroundColor: "#e2e8f0",
+  },
+  video: {
+    alignSelf: "center",
+    height: 200,
+  },
+
+  buttons: {
+    borderRadius: 30,
+    aspectRatio: 1,
+  },
+
+  paragraph: {
+    fontSize: 18,
   },
 });

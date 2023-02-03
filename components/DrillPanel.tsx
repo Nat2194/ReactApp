@@ -16,7 +16,7 @@ type props = {
   navigation: any;
   drills: any;
   image: any;
-  name: any;
+  name: string;
 };
 
 const DrillPanel = ({ navigation, drills, image, name }: props) => {
@@ -42,7 +42,7 @@ const DrillPanel = ({ navigation, drills, image, name }: props) => {
           <View style={[styles.centerCol, styles.fillH]}>
             <View style={{ position: "absolute", top: 10, left: 0 }}>
               <TouchableOpacity
-                onPress={() => navigation.navigate("Overview")}
+                onPress={() => navigation.goBack()}
                 style={[
                   styles.h40,
                   styles.ratio1,

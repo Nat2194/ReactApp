@@ -1,16 +1,7 @@
 import React, { useLayoutEffect } from "react";
-import {
-  ImageBackground,
-  Text,
-  View,
-  Dimensions,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { ScrollView } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import { Icon } from "@rneui/themed";
-import Constants from "expo-constants";
 
 // Custom imports
 import styles from "../styles";
@@ -31,9 +22,6 @@ export type FinishingScreenNavigationProps = CompositeNavigationProp<
 function FinishingScreen() {
   const navigation = useNavigation<FinishingScreenNavigationProps>();
 
-  const windowWidth = Dimensions.get("window").width;
-  const windowHeight = Dimensions.get("window").height;
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -49,7 +37,7 @@ function FinishingScreen() {
         <ScrollView style={[styles.col]}>
           <ImageDrill
             nav={navigation}
-            route="Shooting"
+            route="Mikan"
             name="Mikan Drill"
             numberLines={3}
             image={require("../assets/mikan.jpg")}
@@ -57,15 +45,15 @@ function FinishingScreen() {
           />
           <ImageDrill
             nav={navigation}
-            route="Handling"
+            route="Layup"
             name="Layup Drills"
             numberLines={3}
-            image={require("../assets/reverse-layup.jpg")}
+            image={require("../assets/layup.jpg")}
             height={150}
           />
           <ImageDrill
             nav={navigation}
-            route="Handling"
+            route="Floater"
             name="Floaters"
             numberLines={2}
             image={require("../assets/trae.jpg")}
@@ -73,7 +61,7 @@ function FinishingScreen() {
           />
           <ImageDrill
             nav={navigation}
-            route="Handling"
+            route="Post"
             name="Post Moves"
             numberLines={3}
             image={require("../assets/post-moves.jpg")}

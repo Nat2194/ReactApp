@@ -1,46 +1,37 @@
 import React, { useState, useCallback, useRef } from "react";
-import { View, Button, Alert } from "react-native";
-import YoutubePlayer, { YoutubeIframeRef } from "react-native-youtube-iframe";
+import { View, Button, Alert, Dimensions } from "react-native";
+import { Video, AVPlaybackStatus } from "expo-av";
+
+import WebView from "react-native-webview";
+
+import Constants from "expo-constants";
+
+// Custom Imports
+import styles from "../styles";
 
 type props = {
-  vidId: string;
+  vidRef: string;
+  width: number;
 };
 
-const VideoPlayer = ({ vidId }: props) => {
-  const playerRef = useRef<YoutubeIframeRef>(null);
-  const [playing, setPlaying] = useState(false);
-
-  const onStateChange = useCallback((state: String) => {
-    if (state === "ended") {
-      setPlaying(false);
-    }
-    if (state === "playing") {
-      setPlaying(true);
-    }
-    if (state === "paused") {
-      setPlaying(false);
-    }
-  }, []);
-
-  const togglePlaying = useCallback(() => {
-    setPlaying((prev) => !prev);
-  }, []);
+const VideoPlayer = ({ vidRef, width }: props) => {
+  const video = React.useRef(null);
+  const windowWidth = width;
+  const vidHeight = windowWidth * 0.5625;
 
   return (
-    <View>
-      <YoutubePlayer ref={playerRef} height={400} width={400} videoId={vidId} />
-
-      <Button
-        title="log details"
-        onPress={() => {
-          playerRef.current
-            ?.getCurrentTime()
-            .then((currentTime) => console.log({ currentTime }));
-
-          playerRef.current
-            ?.getDuration()
-            .then((getDuration) => console.log({ getDuration }));
+    <View style={[styles.container, { width: windowWidth }]}>
+      <WebView
+        originWhitelist={["*"]}
+        source={{
+          html: `<iframe width="100%" height="100%" src="${vidRef}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
         }}
+        style={[
+          styles.container,
+          { height: vidHeight },
+          styles.fillW,
+          styles.bgApp,
+        ]}
       />
     </View>
   );

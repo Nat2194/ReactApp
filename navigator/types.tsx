@@ -7,6 +7,7 @@ export type RootStackParamList = {
 export type TabStackParamList = {
   Profile: undefined;
   Practice: undefined;
+  Stats: undefined;
 };
 
 export type DrillStackParamList = {
@@ -24,15 +25,38 @@ export type DrillStackParamList = {
   Stepback: undefined;
   Mikan: undefined;
   Layup: undefined;
+  UnderhandLayup: undefined;
+  Eurostep: undefined;
+  UpAndUnder: undefined;
+  ReverseLayup: undefined;
+  SpinLayup: undefined;
+  ShakeAndBake: undefined;
   Floater: undefined;
   Post: undefined;
+  ForwardPivot: undefined;
+  BackPivot: undefined;
+  JumpHook: undefined;
+  SkyHook: undefined;
+  DropStep: undefined;
+  StepThrough: undefined;
+  DreamShake: undefined;
+  ReverseSpin: undefined;
+  FakeReverse: undefined;
+  PennyHardaway: undefined;
+  KyrieHesi: undefined;
   BallControl: undefined;
   Crossover: undefined;
+  BasicCrossover: undefined;
+  KillerCrossover: undefined;
+  DoubleCrossover: undefined;
+  Snatch: undefined;
   BTL: undefined;
   BTB: undefined;
   InNOut: undefined;
+  Hesitation: undefined;
+  Shammgod: undefined;
   SpinMoves: undefined;
-  Plyo: undefined;
+  Plyometrics: undefined;
   Core: undefined;
   Leg: undefined;
   Cardio: undefined;

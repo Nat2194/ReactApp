@@ -19,8 +19,8 @@ const UserNavigator = () => {
 
   return (
     <User.Navigator>
-      <User.Screen name="Login" component={LoginScreen} />
       <User.Screen name="Overview" component={ProfileScreen} />
+      <User.Screen name="Login" component={LoginScreen} />
     </User.Navigator>
   );
 };

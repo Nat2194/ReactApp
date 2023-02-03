@@ -1,12 +1,14 @@
 import React, { useLayoutEffect } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "@rneui/themed";
+import { View } from "react-native";
 
 // Custom imports
 import UserNavigator from "./UserNavigator";
 import { useNavigation } from "@react-navigation/native";
 import { TabStackParamList } from "./types";
 import DrillNavigator from "./DrillNavigator";
+import styles from "../styles";
 
 const Tab = createBottomTabNavigator<TabStackParamList>();
 
@@ -21,29 +23,79 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        keyboardHidesTabBar: true,
+        tabBarHideOnKeyboard: true,
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          backgroundColor: "#000000",
+          borderColor: "grey",
+          padding: 5,
+        },
         tapBarActiveTintColor: "#59C1CC",
-        tapBarInactiveTintColor: "gray",
+        tapBarInactiveTintColor: "grey",
         tabBarIcon: ({ focused, color, size }) => {
           if (route.name === "Profile") {
             return (
-              <Icon
-                name="user"
-                type="entypo"
-                color={focused ? "#59C1CC" : "gray"}
-              ></Icon>
+              <View
+                style={[
+                  { backgroundColor: focused ? "#59C1CC" : "gray" },
+                  styles.ratio1,
+                  styles.round30,
+                  styles.fillH,
+                  styles.align,
+                  styles.centerCol,
+                ]}
+              >
+                <Icon
+                  name="user"
+                  type="entypo"
+                  color={focused ? "white" : "black"}
+                ></Icon>
+              </View>
             );
           } else if (route.name === "Practice") {
             return (
-              <Icon
-                name="basketball-sharp"
-                type="ionicon"
-                color={focused ? "#fa8320" : "gray"}
-              ></Icon>
+              <View
+                style={[
+                  { backgroundColor: focused ? "#fa8320" : "gray" },
+                  styles.ratio1,
+                  styles.round30,
+                  styles.fillH,
+                  styles.align,
+                  styles.centerCol,
+                ]}
+              >
+                <Icon
+                  name="basketball-sharp"
+                  type="ionicon"
+                  color={focused ? "white" : "black"}
+                ></Icon>
+              </View>
+            );
+          } else if (route.name === "Stats") {
+            return (
+              <View
+                style={[
+                  { backgroundColor: focused ? "#e11d48" : "gray" },
+                  styles.ratio1,
+                  styles.round30,
+                  styles.fillH,
+                  styles.align,
+                  styles.centerCol,
+                ]}
+              >
+                <Icon
+                  name="bar-graph"
+                  type="entypo"
+                  color={focused ? "white" : "black"}
+                ></Icon>
+              </View>
             );
           }
         },
       })}
     >
+      <Tab.Screen name="Stats" component={UserNavigator} />
       <Tab.Screen name="Profile" component={UserNavigator} />
       <Tab.Screen name="Practice" component={DrillNavigator} />
     </Tab.Navigator>

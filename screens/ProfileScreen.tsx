@@ -12,6 +12,7 @@ import {
 } from "@react-navigation/native";
 import { TabStackParamList } from "../navigator/types";
 import { UserStackParamList } from "../navigator/types";
+import Dashboard from "../components/Dashboard";
 
 export type ProfileScreenNavigationProps = CompositeNavigationProp<
   NativeStackNavigationProp<UserStackParamList>,
@@ -28,8 +29,8 @@ const ProfileScreen = () => {
   }, []);
 
   return (
-    <View style={[styles.centerCol, { paddingTop: Constants.statusBarHeight }]}>
-      <View style={styles.centerRow}>
+    <View style={[styles.startCol, styles.bgBlack, styles.fillH]}>
+      <View style={[styles.centerRow, { height: "40%" }]}>
         <ImageBackground
           source={require("../assets/home.jpg")}
           resizeMode="cover"
@@ -48,6 +49,9 @@ const ProfileScreen = () => {
             </Text>
           </View>
         </ImageBackground>
+      </View>
+      <View style={[styles.centerCol, { height: "60%" }]}>
+        <Dashboard />
       </View>
     </View>
   );
