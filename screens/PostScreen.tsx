@@ -31,7 +31,7 @@ function PostScreen() {
   return (
     <DrillPanel
       navigation={navigation}
-      image={require("../assets/post-moves.jpg")}
+      image={require("../assets/img/post-moves.jpg")}
       name="Post Moves"
       drills={
         <ScrollView style={[styles.col]}>
@@ -40,7 +40,7 @@ function PostScreen() {
             route="BackPivot"
             name="Back Pivot"
             numberLines={3}
-            image={require("../assets/back-pivot.jpg")}
+            image={require("../assets/img/back-pivot.jpg")}
             height={150}
           />
           <ImageDrill
@@ -48,7 +48,7 @@ function PostScreen() {
             route="ForwardPivot"
             name="Forward Pivot"
             numberLines={3}
-            image={require("../assets/forward-pivot.jpg")}
+            image={require("../assets/img/forward-pivot.jpg")}
             height={150}
           />
           <ImageDrill
@@ -56,7 +56,7 @@ function PostScreen() {
             route="JumpHook"
             name="Jump Hook"
             numberLines={3}
-            image={require("../assets/jump-hook.jpg")}
+            image={require("../assets/img/jump-hook.jpg")}
             height={150}
           />
           <ImageDrill
@@ -64,7 +64,7 @@ function PostScreen() {
             route="SkyHook"
             name="Sky Hook"
             numberLines={3}
-            image={require("../assets/skyhook.jpg")}
+            image={require("../assets/img/skyhook.jpg")}
             height={150}
           />
           <ImageDrill
@@ -72,7 +72,7 @@ function PostScreen() {
             route="DropStep"
             name="Drop Step"
             numberLines={3}
-            image={require("../assets/drop-step.jpg")}
+            image={require("../assets/img/drop-step.jpg")}
             height={150}
           />
           <ImageDrill
@@ -80,7 +80,7 @@ function PostScreen() {
             route="StepThrough"
             name="Step Through"
             numberLines={4}
-            image={require("../assets/step-through.jpg")}
+            image={require("../assets/img/step-through.jpg")}
             height={150}
           />
           <ImageDrill
@@ -88,7 +88,7 @@ function PostScreen() {
             route="Fadeaway"
             name="Fadeaway"
             numberLines={2}
-            image={require("../assets/fadeaway.jpg")}
+            image={require("../assets/img/fadeaway.jpg")}
             height={150}
           />
           <ImageDrill
@@ -96,7 +96,7 @@ function PostScreen() {
             route="DreamShake"
             name="Dream Shake"
             numberLines={3}
-            image={require("../assets/dream-shake.jpg")}
+            image={require("../assets/img/dream-shake.jpg")}
             height={150}
           />
         </ScrollView>

@@ -31,7 +31,7 @@ function AthleticismScreen() {
   return (
     <DrillPanel
       navigation={navigation}
-      image={require("../assets/athleticism.jpg")}
+      image={require("../assets/img/athleticism.jpg")}
       name="Athleticism Workouts"
       drills={
         <ScrollView style={[styles.col]}>
@@ -40,7 +40,7 @@ function AthleticismScreen() {
             route="Plyometrics"
             name="Plyometrics"
             numberLines={2}
-            image={require("../assets/plyometrics.jpg")}
+            image={require("../assets/img/plyometrics.jpg")}
             height={150}
           />
           <ImageDrill
@@ -48,7 +48,7 @@ function AthleticismScreen() {
             route="Core"
             name="Core Training"
             numberLines={3}
-            image={require("../assets/core.jpg")}
+            image={require("../assets/img/core.jpg")}
             height={150}
           />
           <ImageDrill
@@ -56,7 +56,7 @@ function AthleticismScreen() {
             route="Leg"
             name="Leg Training"
             numberLines={3}
-            image={require("../assets/legs.jpg")}
+            image={require("../assets/img/legs.jpg")}
             height={150}
           />
           <ImageDrill
@@ -64,7 +64,7 @@ function AthleticismScreen() {
             route="Cardio"
             name="Cardio Training"
             numberLines={3}
-            image={require("../assets/cardio.jpg")}
+            image={require("../assets/img/cardio.jpg")}
             height={150}
           />
         </ScrollView>

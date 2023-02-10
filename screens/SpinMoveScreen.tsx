@@ -31,7 +31,7 @@ function SpinMoveScreen() {
   return (
     <DrillPanel
       navigation={navigation}
-      image={require("../assets/spin-move.jpg")}
+      image={require("../assets/img/spin-move.jpg")}
       name="Spin Moves"
       drills={
         <ScrollView style={[styles.col]}>
@@ -40,7 +40,7 @@ function SpinMoveScreen() {
             route="ReverseSpin"
             name="Reverse"
             numberLines={2}
-            image={require("../assets/reverse-spin.jpg")}
+            image={require("../assets/img/reverse-spin.jpg")}
             height={150}
           />
           <ImageDrill
@@ -48,7 +48,7 @@ function SpinMoveScreen() {
             route="FakeReverse"
             name="Fake Reverse"
             numberLines={3}
-            image={require("../assets/fake-reverse.jpg")}
+            image={require("../assets/img/fake-reverse.jpg")}
             height={150}
           />
           <ImageDrill
@@ -56,7 +56,7 @@ function SpinMoveScreen() {
             route="PennyHardaway"
             name="Peny Hardaway Move"
             numberLines={4}
-            image={require("../assets/penny-hardaway.jpg")}
+            image={require("../assets/img/penny-hardaway.jpg")}
             height={150}
           />
           <ImageDrill
@@ -64,7 +64,7 @@ function SpinMoveScreen() {
             route="KyrieHesi"
             name="Kyrie Hesi"
             numberLines={3}
-            image={require("../assets/kyrie-hesi-spin.jpg")}
+            image={require("../assets/img/kyrie-hesi-spin.jpg")}
             height={150}
           />
         </ScrollView>

@@ -32,7 +32,7 @@ function HandlingScreen() {
   return (
     <DrillPanel
       navigation={navigation}
-      image={require("../assets/handling.jpg")}
+      image={require("../assets/img/handling.jpg")}
       name="Ball Handling Drills"
       drills={
         <ScrollView style={[styles.col]}>
@@ -41,7 +41,7 @@ function HandlingScreen() {
             route="BallControl"
             name="Ball Control Drills"
             numberLines={4}
-            image={require("../assets/ball-control.jpg")}
+            image={require("../assets/img/ball-control.jpg")}
             height={150}
           />
           <ImageDrill
@@ -49,7 +49,7 @@ function HandlingScreen() {
             route="Crossover"
             name="Crossovers"
             numberLines={2}
-            image={require("../assets/crossover.jpg")}
+            image={require("../assets/img/crossover.jpg")}
             height={150}
           />
           <ImageDrill
@@ -57,7 +57,7 @@ function HandlingScreen() {
             route="BTL"
             name="Between the Legs"
             numberLines={4}
-            image={require("../assets/btl.jpg")}
+            image={require("../assets/img/btl.jpg")}
             height={150}
           />
           <ImageDrill
@@ -65,7 +65,7 @@ function HandlingScreen() {
             route="BTB"
             name="Behind the Back"
             numberLines={4}
-            image={require("../assets/btb.jpg")}
+            image={require("../assets/img/btb.jpg")}
             height={150}
           />
           <ImageDrill
@@ -73,7 +73,7 @@ function HandlingScreen() {
             route="InNOut"
             name="In & Out"
             numberLines={4}
-            image={require("../assets/in-n-out.jpg")}
+            image={require("../assets/img/in-n-out.jpg")}
             height={150}
           />
           <ImageDrill
@@ -81,7 +81,7 @@ function HandlingScreen() {
             route="Hesitation"
             name="Hesitation"
             numberLines={2}
-            image={require("../assets/hesi.jpg")}
+            image={require("../assets/img/hesi.jpg")}
             height={150}
           />
           <ImageDrill
@@ -89,7 +89,7 @@ function HandlingScreen() {
             route="SpinMoves"
             name="Spin Moves"
             numberLines={3}
-            image={require("../assets/spin-move.jpg")}
+            image={require("../assets/img/spin-move.jpg")}
             height={150}
           />
           <ImageDrill
@@ -97,7 +97,7 @@ function HandlingScreen() {
             route="Shammgod"
             name="Shammgod"
             numberLines={3}
-            image={require("../assets/shammgod.jpg")}
+            image={require("../assets/img/shammgod.jpg")}
             height={150}
           />
         </ScrollView>

@@ -80,6 +80,9 @@ export default StyleSheet.create({
   bgDarkGrey: {
     backgroundColor: "#71797E",
   },
+  bgWood: {
+    backgroundColor: "#ba926c",
+  },
 
   // Layout
 
@@ -474,5 +477,21 @@ export default StyleSheet.create({
 
   paragraph: {
     fontSize: 18,
+  },
+
+  // Tests
+
+  testButton: {
+    backgroundColor: "blue",
+    color: "white",
+    paddingHorizontal: 15,
+    paddingVertical: 32,
+    textAlign: "center",
+    fontSize: 16,
+  },
+
+  testButtons: {
+    display: "flex",
+    justifyContent: "center",
   },
 });

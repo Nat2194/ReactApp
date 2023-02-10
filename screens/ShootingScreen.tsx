@@ -31,7 +31,7 @@ function ShootingScreen() {
   return (
     <DrillPanel
       navigation={navigation}
-      image={require("../assets/shooting.jpg")}
+      image={require("../assets/img/shooting.jpg")}
       name="Shooting Drills"
       drills={
         <ScrollView style={[styles.col]}>
@@ -40,7 +40,7 @@ function ShootingScreen() {
             route="FormShot"
             name="Form Shots"
             numberLines={3}
-            image={require("../assets/form.png")}
+            image={require("../assets/img/form.png")}
             height={150}
           />
           <ImageDrill
@@ -48,7 +48,7 @@ function ShootingScreen() {
             route="FreeThrow"
             name="Free Throws"
             numberLines={3}
-            image={require("../assets/free-throw.jpg")}
+            image={require("../assets/img/free-throw.jpg")}
             height={150}
           />
           <ImageDrill
@@ -56,7 +56,7 @@ function ShootingScreen() {
             route="Midrange"
             name="Midrange"
             numberLines={2}
-            image={require("../assets/midrange.jpg")}
+            image={require("../assets/img/midrange.jpg")}
             height={150}
           />
           <ImageDrill
@@ -64,7 +64,7 @@ function ShootingScreen() {
             route="RayAllen"
             name="Ray Allen Drill"
             numberLines={4}
-            image={require("../assets/ray-allen.jpg")}
+            image={require("../assets/img/ray-allen.jpg")}
             height={150}
           />
           <ImageDrill
@@ -72,7 +72,7 @@ function ShootingScreen() {
             route="ThreePoint"
             name="3 Point Shooting"
             numberLines={4}
-            image={require("../assets/curry.jpg")}
+            image={require("../assets/img/curry.jpg")}
             height={150}
           />
           <ImageDrill
@@ -80,7 +80,7 @@ function ShootingScreen() {
             route="Fadeaway"
             name="Fadeaway"
             numberLines={2}
-            image={require("../assets/fadeaway.jpg")}
+            image={require("../assets/img/fadeaway.jpg")}
             height={150}
           />
           <ImageDrill
@@ -88,7 +88,7 @@ function ShootingScreen() {
             route="Stepback"
             name="Stepback"
             numberLines={2}
-            image={require("../assets/stepback.jpg")}
+            image={require("../assets/img/stepback.jpg")}
             height={150}
           />
         </ScrollView>

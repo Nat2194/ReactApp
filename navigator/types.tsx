@@ -8,6 +8,7 @@ export type TabStackParamList = {
   Profile: undefined;
   Practice: undefined;
   Stats: undefined;
+  Board: undefined;
 };
 
 export type DrillStackParamList = {

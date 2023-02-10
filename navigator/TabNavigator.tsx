@@ -8,7 +8,9 @@ import UserNavigator from "./UserNavigator";
 import { useNavigation } from "@react-navigation/native";
 import { TabStackParamList } from "./types";
 import DrillNavigator from "./DrillNavigator";
+import BoardScreen from "../screens/BoardScreen";
 import styles from "../styles";
+import Icons from "../components/Icons";
 
 const Tab = createBottomTabNavigator<TabStackParamList>();
 
@@ -91,6 +93,25 @@ const TabNavigator = () => {
                 ></Icon>
               </View>
             );
+          } else if (route.name === "Board") {
+            return (
+              <View
+                style={[
+                  { backgroundColor: focused ? "#10b981" : "gray" },
+                  styles.ratio1,
+                  styles.round30,
+                  styles.fillH,
+                  styles.align,
+                  styles.centerCol,
+                ]}
+              >
+                <Icons
+                  name={"board"}
+                  size={40}
+                  color={focused ? "white" : "black"}
+                />
+              </View>
+            );
           }
         },
       })}
@@ -98,6 +119,7 @@ const TabNavigator = () => {
       <Tab.Screen name="Stats" component={UserNavigator} />
       <Tab.Screen name="Profile" component={UserNavigator} />
       <Tab.Screen name="Practice" component={DrillNavigator} />
+      <Tab.Screen name="Board" component={BoardScreen} />
     </Tab.Navigator>
   );
 };

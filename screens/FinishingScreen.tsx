@@ -31,7 +31,7 @@ function FinishingScreen() {
   return (
     <DrillPanel
       navigation={navigation}
-      image={require("../assets/finishing.jpg")}
+      image={require("../assets/img/finishing.jpg")}
       name="Finishing Drills"
       drills={
         <ScrollView style={[styles.col]}>
@@ -40,7 +40,7 @@ function FinishingScreen() {
             route="Mikan"
             name="Mikan Drill"
             numberLines={3}
-            image={require("../assets/mikan.jpg")}
+            image={require("../assets/img/mikan.jpg")}
             height={150}
           />
           <ImageDrill
@@ -48,7 +48,7 @@ function FinishingScreen() {
             route="Layup"
             name="Layup Drills"
             numberLines={3}
-            image={require("../assets/layup.jpg")}
+            image={require("../assets/img/layup.jpg")}
             height={150}
           />
           <ImageDrill
@@ -56,7 +56,7 @@ function FinishingScreen() {
             route="Floater"
             name="Floaters"
             numberLines={2}
-            image={require("../assets/trae.jpg")}
+            image={require("../assets/img/trae.jpg")}
             height={150}
           />
           <ImageDrill
@@ -64,7 +64,7 @@ function FinishingScreen() {
             route="Post"
             name="Post Moves"
             numberLines={3}
-            image={require("../assets/post-moves.jpg")}
+            image={require("../assets/img/post-moves.jpg")}
             height={150}
           />
         </ScrollView>

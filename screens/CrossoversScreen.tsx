@@ -31,7 +31,7 @@ function CrossoversScreen() {
   return (
     <DrillPanel
       navigation={navigation}
-      image={require("../assets/crossover.jpg")}
+      image={require("../assets/img/crossover.jpg")}
       name="Crossover Drills"
       drills={
         <ScrollView style={[styles.col]}>
@@ -40,7 +40,7 @@ function CrossoversScreen() {
             route="BasicCrossover"
             name="Crossover"
             numberLines={3}
-            image={require("../assets/basic-cross.jpg")}
+            image={require("../assets/img/basic-cross.jpg")}
             height={150}
           />
           <ImageDrill
@@ -48,7 +48,7 @@ function CrossoversScreen() {
             route="KillerCrossover"
             name="Killer Crossover"
             numberLines={3}
-            image={require("../assets/killer-cross.jpg")}
+            image={require("../assets/img/killer-cross.jpg")}
             height={150}
           />
           <ImageDrill
@@ -56,7 +56,7 @@ function CrossoversScreen() {
             route="DoubleCrossover"
             name="Double Crossover"
             numberLines={3}
-            image={require("../assets/double-cross.jpg")}
+            image={require("../assets/img/double-cross.jpg")}
             height={150}
           />
           <ImageDrill
@@ -64,7 +64,7 @@ function CrossoversScreen() {
             route="Snatch"
             name="Snatch"
             numberLines={2}
-            image={require("../assets/snatch.jpg")}
+            image={require("../assets/img/snatch.jpg")}
             height={150}
           />
         </ScrollView>

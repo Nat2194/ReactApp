@@ -31,7 +31,7 @@ function LayupsScreen() {
   return (
     <DrillPanel
       navigation={navigation}
-      image={require("../assets/layup.jpg")}
+      image={require("../assets/img/layup.jpg")}
       name="Layup Drills"
       drills={
         <ScrollView style={[styles.col]}>
@@ -40,7 +40,7 @@ function LayupsScreen() {
             route="UnderhandLayup"
             name="Underhand Layup"
             numberLines={3}
-            image={require("../assets/underhand-layup.jpg")}
+            image={require("../assets/img/underhand-layup.jpg")}
             height={150}
           />
           <ImageDrill
@@ -48,7 +48,7 @@ function LayupsScreen() {
             route="Eurostep"
             name="Eurostep"
             numberLines={2}
-            image={require("../assets/eurostep.jpg")}
+            image={require("../assets/img/eurostep.jpg")}
             height={150}
           />
           <ImageDrill
@@ -56,7 +56,7 @@ function LayupsScreen() {
             route="ReverseLayup"
             name="Reverse Layup"
             numberLines={3}
-            image={require("../assets/reverse-layup.jpg")}
+            image={require("../assets/img/reverse-layup.jpg")}
             height={150}
           />
           <ImageDrill
@@ -64,7 +64,7 @@ function LayupsScreen() {
             route="UpAndUnder"
             name="Up And Under"
             numberLines={4}
-            image={require("../assets/up-and-under.jpg")}
+            image={require("../assets/img/up-and-under.jpg")}
             height={150}
           />
           <ImageDrill
@@ -72,7 +72,7 @@ function LayupsScreen() {
             route="SpinLayup"
             name="Spin Layup"
             numberLines={3}
-            image={require("../assets/spin-layup.jpg")}
+            image={require("../assets/img/spin-layup.jpg")}
             height={150}
           />
           <ImageDrill
@@ -80,7 +80,7 @@ function LayupsScreen() {
             route="ShakeAndBake"
             name="Shake N Bake"
             numberLines={4}
-            image={require("../assets/shake-n-bake.jpg")}
+            image={require("../assets/img/shake-n-bake.jpg")}
             height={150}
           />
         </ScrollView>

@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'basketball';
-  src: url('../font/basketball.eot?5077901');
-  src: url('../font/basketball.eot?5077901#iefix') format('embedded-opentype'),
-       url('../font/basketball.woff2?5077901') format('woff2'),
-       url('../font/basketball.woff?5077901') format('woff'),
-       url('../font/basketball.ttf?5077901') format('truetype'),
-       url('../font/basketball.svg?5077901#basketball') format('svg');
+  src: url('../font/basketball.eot?62677051');
+  src: url('../font/basketball.eot?62677051#iefix') format('embedded-opentype'),
+       url('../font/basketball.woff2?62677051') format('woff2'),
+       url('../font/basketball.woff?62677051') format('woff'),
+       url('../font/basketball.ttf?62677051') format('truetype'),
+       url('../font/basketball.svg?62677051#basketball') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'basketball';
-    src: url('../font/basketball.svg?5077901#basketball') format('svg');
+    src: url('../font/basketball.svg?62677051#basketball') format('svg');
   }
 }
 */
@@ -58,3 +58,4 @@
 .icon-dribble-hand:before { content: '\e801'; } /* '' */
 .icon-layup:before { content: '\e803'; } /* '' */
 .icon-shooter:before { content: '\e805'; } /* '' */
+.icon-board:before { content: '\e807'; } /* '' */

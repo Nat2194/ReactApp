@@ -32,7 +32,7 @@ const ProfileScreen = () => {
     <View style={[styles.startCol, styles.bgBlack, styles.fillH]}>
       <View style={[styles.centerRow, { height: "40%" }]}>
         <ImageBackground
-          source={require("../assets/home.jpg")}
+          source={require("../assets/img/home.jpg")}
           resizeMode="cover"
           style={[styles.image, styles.centerCol]}
         >

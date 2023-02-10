@@ -34,7 +34,7 @@ const PracticeScreen = () => {
   return (
     <View style={[styles.bgApp, { paddingTop: Constants.statusBarHeight }]}>
       <Image
-        source={require("../assets/practice.jpg")}
+        source={require("../assets/img/practice.jpg")}
         containerStyle={[
           styles.startCol,
           { height: windowHeight / 5 },
@@ -72,7 +72,7 @@ const PracticeScreen = () => {
             route="Shooting"
             name="Shooting"
             numberLines={2}
-            image={require("../assets/shooting.jpg")}
+            image={require("../assets/img/shooting.jpg")}
             height={"25%"}
           />
           <ImageDrill
@@ -80,7 +80,7 @@ const PracticeScreen = () => {
             route="Finishing"
             name="Finishing"
             numberLines={2}
-            image={require("../assets/finishing.jpg")}
+            image={require("../assets/img/finishing.jpg")}
             height={"25%"}
           />
           <ImageDrill
@@ -88,7 +88,7 @@ const PracticeScreen = () => {
             route="Handling"
             name="Ball Handling"
             numberLines={3}
-            image={require("../assets/handling.jpg")}
+            image={require("../assets/img/handling.jpg")}
             height={"25%"}
           />
           <ImageDrill
@@ -96,7 +96,7 @@ const PracticeScreen = () => {
             route="Athleticism"
             name="Athleticism"
             numberLines={2}
-            image={require("../assets/athleticism.jpg")}
+            image={require("../assets/img/athleticism.jpg")}
             height={"25%"}
           />
         </View>
