@@ -11,6 +11,7 @@ import DrillNavigator from "./DrillNavigator";
 import BoardScreen from "../screens/BoardScreen";
 import styles from "../styles";
 import Icons from "../components/Icons";
+import TestScreen from "../screens/TestScreen";
 
 const Tab = createBottomTabNavigator<TabStackParamList>();
 
@@ -103,6 +104,7 @@ const TabNavigator = () => {
                   styles.fillH,
                   styles.align,
                   styles.centerCol,
+                  styles.pTop5,
                 ]}
               >
                 <Icons
@@ -119,7 +121,7 @@ const TabNavigator = () => {
       <Tab.Screen name="Stats" component={UserNavigator} />
       <Tab.Screen name="Profile" component={UserNavigator} />
       <Tab.Screen name="Practice" component={DrillNavigator} />
-      <Tab.Screen name="Board" component={BoardScreen} />
+      <Tab.Screen name="Board" component={TestScreen} />
     </Tab.Navigator>
   );
 };

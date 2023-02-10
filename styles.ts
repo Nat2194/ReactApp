@@ -173,6 +173,14 @@ export default StyleSheet.create({
     paddingHorizontal: 30,
   },
 
+  pTop5: {
+    paddingTop: 5,
+  },
+
+  pTop10: {
+    paddingTop: 10,
+  },
+
   pTop30: {
     paddingTop: 30,
   },
