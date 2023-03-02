@@ -1,6 +1,6 @@
 // kind of a sandbox to test new features
 
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { StyleSheet, View, Text, Dimensions } from "react-native";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import Constants from "expo-constants";
@@ -14,13 +14,14 @@ import { TabStackParamList } from "../navigator/types";
 import TestButton from "../components/TestButton";
 import Draggable from "../components/Draggable";
 import styles from "../styles";
+import Spawner from "../components/Spawner";
 
 export type BoardScreenNavigationProps = BottomTabNavigationProp<
   TabStackParamList,
   "Board"
 >;
 
-const { width, height } = Dimensions.get("window");
+const { width, height } = Dimensions.get("screen");
 
 function TestScreen() {
   const navigation = useNavigation<BoardScreenNavigationProps>();
@@ -32,11 +33,14 @@ function TestScreen() {
   }, []);
 
   const x = width / 10;
-  const y = height / 2;
+  const y = height / 3;
+
+  const [componentsList, setList] = useState<JSX.Element[]>([]);
 
   return (
-    <View style={styles.container}>
-      <Draggable size={30} x={x} y={y} color={"#f26636"} />
+    <View style={[styles.centerCol, { height: "100%" }, styles.p30]}>
+      <Spawner x={x} y={y} componentsList={componentsList} setList={setList} />
+      <View>{componentsList}</View>
     </View>
   );
 }

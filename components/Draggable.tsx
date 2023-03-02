@@ -9,9 +9,10 @@ type props = {
   color: any;
   x: number;
   y: number;
+  number: number;
 };
 
-const Draggable = ({ size, color, x, y }: props) => {
+const Draggable = ({ size, color, x, y, number }: props) => {
   const pan = useRef(new Animated.ValueXY({ x, y })).current;
 
   const panResponder = useRef(
@@ -37,9 +38,14 @@ const Draggable = ({ size, color, x, y }: props) => {
         <View
           style={[
             styles.ball,
+            styles.centerCol,
             { height: size, width: size, backgroundColor: color },
           ]}
-        />
+        >
+          <View style={[styles.centerRow]}>
+            <Text>{number}</Text>
+          </View>
+        </View>
       </Animated.View>
     </View>
   );
