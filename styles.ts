@@ -459,6 +459,11 @@ export default StyleSheet.create({
   },
 
   // Particular Cases
+
+  ball: {
+    borderRadius: 100,
+  },
+
   image: {
     resizeMode: "cover",
     width: "100%",

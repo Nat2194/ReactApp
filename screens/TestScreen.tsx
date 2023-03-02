@@ -12,6 +12,8 @@ import { PanGestureHandler, State } from "react-native-gesture-handler";
 // Custom imports
 import { TabStackParamList } from "../navigator/types";
 import TestButton from "../components/TestButton";
+import Draggable from "../components/Draggable";
+import styles from "../styles";
 
 export type BoardScreenNavigationProps = BottomTabNavigationProp<
   TabStackParamList,
@@ -19,9 +21,6 @@ export type BoardScreenNavigationProps = BottomTabNavigationProp<
 >;
 
 const { width, height } = Dimensions.get("window");
-
-const { cond, eq, add, set, Value, event, interpolateNode, Extrapolate } =
-  Animated;
 
 function TestScreen() {
   const navigation = useNavigation<BoardScreenNavigationProps>();
@@ -32,89 +31,14 @@ function TestScreen() {
     });
   }, []);
 
-  const dragX = new Value(0);
-  const dragY = new Value(0);
-
-  const offsetX = new Value(width / 2);
-  const offsetY = new Value(height / 2);
-
-  const gestureState = new Value(-1);
-
-  const transX = cond(
-    eq(gestureState, State.ACTIVE),
-    add(offsetX, dragX),
-    set(offsetX, add(offsetX, dragX))
-  );
-
-  const transY = cond(
-    eq(gestureState, State.ACTIVE),
-    add(offsetY, dragY),
-    set(offsetY, add(offsetY, dragY))
-  );
-
-  const opacity = interpolateNode(transY, {
-    inputRange: [0, height],
-    outputRange: [0.1, 1],
-  });
-
-  /*const onGestureEvent = Animated.event([
-    {
-      nativeEvent: {
-        translationX: dragX,
-        translationY: dragY,
-        state: gestureState,
-      },
-    },
-  ]);*/
-
-  const onGestureEvent = () => {
-    console.log("X= " + dragX);
-    console.log("Y= " + dragY);
-  };
+  const x = width / 10;
+  const y = height / 2;
 
   return (
     <View style={styles.container}>
-      <PanGestureHandler
-        maxPointers={1}
-        onGestureEvent={onGestureEvent}
-        onHandlerStateChange={onGestureEvent}
-      >
-        <Animated.View
-          style={[
-            styles.box,
-            {
-              opacity: opacity,
-              transform: [
-                {
-                  translateX: transX,
-                },
-                {
-                  translateY: transY,
-                },
-              ],
-            },
-          ]}
-        />
-      </PanGestureHandler>
+      <Draggable size={30} x={x} y={y} color={"#f26636"} />
     </View>
   );
 }
-
-const CIRCLE_SIZE = 70;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  box: {
-    backgroundColor: "tomato",
-    marginLeft: -(CIRCLE_SIZE / 2),
-    marginTop: -(CIRCLE_SIZE / 2),
-    width: CIRCLE_SIZE,
-    height: CIRCLE_SIZE,
-    borderRadius: CIRCLE_SIZE / 2,
-    borderColor: "#000",
-  },
-});
 
 export default TestScreen;
